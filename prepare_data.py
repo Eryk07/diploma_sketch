@@ -1,12 +1,12 @@
 #import csv
 import random
 import string
-from str_match import StrMatch
+#from str_match import StrMatch
 
 with open('prepared.csv', 'r') as f:
     in_list=f.read().strip(' ').replace(",","").replace("\n","").split(';')
 
-#    ******** BIBLIOTEKA CSV ******* 
+#    ******** BIBLIOTEKA CSV *******
 #    
 #    coś nie chciało siąść - nie rozpoznawał listy
 #
@@ -84,31 +84,12 @@ difflist_insert_random_letter(your_list,5)
   #  wr.writerows(your_list)
 
 
-def compare_list(pattern, damaged):     #WTF?!
-    ls = []
-    for index,word in enumerate(pattern) :       
-        ls.append(word == damaged[index])
-    return ls
-
 with open('output.csv', 'w') as f:
     for item in your_list:
         f.write("%s\n" % item)
 
-ls = compare_list(in_list,your_list)
-
-with open('ls.csv', 'w') as f:
-    for item in ls:
-        f.write("%s\n" % item)
-
-zipped = zip(in_list,your_list,ls)
-all_lists = list(zipped)
-
 #with open('all_lists.csv', 'w') as f:
 #  for item in all_lists:
 #     f.write("%s\n" % item)
-
-print(79*'*')
-for i in range(60):    
-   print(all_lists[i])
 
 #StrMatch.first_algorithm()
