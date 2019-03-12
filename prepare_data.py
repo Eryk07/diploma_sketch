@@ -6,26 +6,7 @@ import string
 with open('prepared.csv', 'r') as f:
     in_list=f.read().strip(' ').replace(",","").replace("\n","").split(';')
 
-#    ******** BIBLIOTEKA CSV *******
-#    
-#    coś nie chciało siąść - nie rozpoznawał listy
-#
-#def get_csv_lines():
- #  with open('prepared.csv') as csv_file:
-  #      csv_reader = csv.reader(csv_file, delimiter=',')
-   #     for row in csv_reader:
-    #        yield row 
-#in_list = list(get_csv_lines())
-
-# **********************************
-
-#for i in range (0,len(your_list)):
- #  print(in_list[i])
-
-
-
 your_list = in_list.copy()
-
 
 def difflist_delate_spaces(ls, percentage=5):
    for x in range (0,int(percentage/100*len(ls)) ):
@@ -70,26 +51,17 @@ def difflist_insert_random_letter(ls, percentage=5):
 #   print(your_list[i])
 #print(79*'*')
 
-difflist_delate_spaces(your_list,5)
+difflist_delate_spaces(your_list,10)
 difflist_delete_random_letter(your_list,5)
 difflist_uppercase(your_list,5)
 difflist_lowercase(your_list,5)
 difflist_title(your_list,5)
 difflist_insert_random_letter(your_list,5)
 
-
-
 #with open("output.csv",'w') as resultFile:
  #   wr = csv.writer(resultFile, dialect='excel')
   #  wr.writerows(your_list)
 
-
 with open('output.csv', 'w') as f:
-    for item in your_list:
-        f.write("%s\n" % item)
-
-#with open('all_lists.csv', 'w') as f:
-#  for item in all_lists:
-#     f.write("%s\n" % item)
-
-#StrMatch.first_algorithm()
+   for item in your_list:
+        f.write("%s;\n" % item)
