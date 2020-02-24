@@ -1,2 +1,2 @@
-# diploma_sketch
-some defs written in python
+# Diploma
+Research work done during diploma promotion at Warsaw University of Technology.
